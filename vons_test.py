@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as soup
 import time
@@ -44,7 +43,7 @@ CHROMEDRIVER_PATH = "/app/development/chromedriver"
 url = "https://shop.vons.com/welcome.html"
 #driver = webdriver.Chrome()
 print(1)
-chrome_options = ChromeOptions()
+chrome_options = webdriver.ChromeOptions()
 print(2)
 chrome_options.binary_location = "/app/.apt/opt/google/chrome/chrome"
 print(3)
