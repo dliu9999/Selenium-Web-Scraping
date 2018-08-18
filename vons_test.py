@@ -111,3 +111,4 @@ for container in containers:
 	f.write(item_name + "," + package_size + "," + price_per + "," + price + "\n")
 
 f.close()
+print("worked")
