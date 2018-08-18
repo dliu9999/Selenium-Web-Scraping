@@ -35,6 +35,10 @@ def sep_name(string):
 
 
 
+#vars
+
+GOOGLE_CHROME_BIN = "/app/.apt/usr/bin/google-chrome"
+CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
 # open webdriver, get url
 url = "https://shop.vons.com/welcome.html"
