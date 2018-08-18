@@ -46,12 +46,12 @@ url = "https://shop.vons.com/welcome.html"
 print(1)
 chrome_options = ChromeOptions()
 print(2)
-chrome_options.binary_location = GOOGLE_CHROME_BIN
+chrome_options.binary_location = "/app/.apt/opt/google/chrome/chrome"
 print(3)
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
 print(4)
-driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+driver = webdriver.Chrome(executable_path="/app/development/chromedriver", chrome_options=chrome_options)
 print(5)
 driver.get(url)
 time.sleep(3)
