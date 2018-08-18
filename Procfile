@@ -1,2 +1,2 @@
 # Procfile
-worker: python test.py
+worker: python vons_test.py
