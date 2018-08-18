@@ -37,7 +37,14 @@ def sep_name(string):
 
 # open webdriver, get url
 url = "https://shop.vons.com/welcome.html"
-driver = webdriver.Chrome()
+#driver = webdriver.Chrome()
+
+chrome_options = Options()
+chrome_options.binary_location = GOOGLE_CHROME_BIN
+chrome_options.add_argument('--disable-gpu')
+chrome_options.add_argument('--no-sandbox')
+driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
+
 driver.get(url)
 time.sleep(3)
 
