@@ -1,2 +1,2 @@
 # Procfile
-worker: python vons_test.py
+web: python vons_test.py
