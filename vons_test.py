@@ -36,22 +36,18 @@ def sep_name(string):
 
 #vars
 
-GOOGLE_CHROME_BIN = "/app/.apt/opt/google/chrome/chrome"
-CHROMEDRIVER_PATH = "/app/development/chromedriver"
+GOOGLE_CHROME_BIN = "/app/.apt/usr/bin/google-chrome"
+CHROMEDRIVER_PATH = "/app/.chromedriver/bin/chromedriver"
 
 # open webdriver, get url
 url = "https://shop.vons.com/welcome.html"
 #driver = webdriver.Chrome()
-print(1)
+
 chrome_options = webdriver.ChromeOptions()
-print(2)
-chrome_options.binary_location = "/app/.apt/opt/google/chrome/chrome"
-print(3)
+chrome_options.binary_location = GOOGLE_CHROME_BIN
 chrome_options.add_argument('--disable-gpu')
 chrome_options.add_argument('--no-sandbox')
-print(4)
-driver = webdriver.Chrome(executable_path="/app/development/chromedriver", chrome_options=chrome_options)
-print(5)
+driver = webdriver.Chrome(executable_path=CHROMEDRIVER_PATH, chrome_options=chrome_options)
 driver.get(url)
 time.sleep(3)
 
