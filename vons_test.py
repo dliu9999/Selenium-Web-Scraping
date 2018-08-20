@@ -76,8 +76,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 #create new table
 cur = conn.cursor()
-day = datetime.date
-cur.execute('CREATE TABLE day(Name TEXT, Package_Size TEXT, Price_Per TEXT, Price TEXT)')
+cur.execute('CREATE TABLE popular(Name TEXT, Package_Size TEXT, Price_Per TEXT, Price TEXT)')
 
 #add to table
 for container in containers:
@@ -112,7 +111,7 @@ for container in containers:
 	elif "Original" in price:
 		price = price.strip().strip("Original Price")
 
-	cur.execute('INSERT INTO posts VALUES(item_name, package_size, price_per, price)')
+	cur.execute('INSERT INTO popular VALUES(item_name, package_size, price_per, price)')
 
 #close database
 conn.commit()
