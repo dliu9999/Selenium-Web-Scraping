@@ -111,7 +111,8 @@ for container in containers:
 	elif "Original" in price:
 		price = price.strip().strip("Original Price")
 
-	cur.execute('INSERT INTO popular VALUES(item_name, package_size, price_per, price)')
+	cur.execute('INSERT INTO popular (item_name, package_size, price_per, price) VALUES (%s,%s,%s,%s),\
+		(item_name, package_size, price_per, price)')
 
 #close database
 conn.commit()
