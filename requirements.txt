@@ -1,2 +1,3 @@
-selenium==3.13.0
 beautifulsoup4==4.6.0
+psycopg2==2.7.5
+selenium==3.13.0

@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as soup
 import time
+import os
+import psycopg2
 
 #functions
 def sep_name(string):
@@ -67,15 +69,15 @@ html = driver.page_source
 page_soup = soup(html, "html.parser")
 containers = page_soup.findAll('product-item', {'class':'col-xs-12 col-sm-6 col-md-4'})
 
-#write to file
-filename = "products.csv"
-f = open(filename, "w")
+#set up database
+DATABASE_URL = os.environ['DATABASE_URL']
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
-headers = "Item Name, Package Size, Price Per, Item Price\n"
+#create new table
+cur = conn.cursor()
+c.execute('CREATE TABLE posts(Name TEXT, Package Size TEXT, Price Per TEXT, Price TEXT)')
 
-f.write(headers)
-
-#fill in csv
+#add to table
 for container in containers:
 	#get name
 	item_name = container.h3.a.text.strip()
@@ -108,7 +110,10 @@ for container in containers:
 	elif "Original" in price:
 		price = price.strip().strip("Original Price")
 
-	f.write(item_name + "," + package_size + "," + price_per + "," + price + "\n")
+	c.execute('INSERT INTO posts VALUES(item_name, package_size, price_per, price)')
 
-f.close()
+#close database
+conn.commit()
+curr.close()
+conn.close()
 print("worked")
