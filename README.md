@@ -1,1 +1,10 @@
 # test-scrape-bot
+
+To use:
+1. Clone repo
+2. Use a terminal and navigate into the repo
+3. $ heroku create
+4. $ git push heroku master
+5. $ heroku ps:scale web=1
+6. $ heroku logs --tail (to see status updates, will print "worked" when finished")
+7. $ heroku pg:psql (to query from the database, e.g. SELECT * FROM popular)
