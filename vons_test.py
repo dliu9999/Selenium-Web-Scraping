@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as soup
 import time
+import datetime
 import os
 import psycopg2
 
@@ -75,7 +76,8 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 #create new table
 cur = conn.cursor()
-cur.execute('CREATE TABLE posts(Name TEXT, Package Size TEXT, Price Per TEXT, Price TEXT)')
+day = datetime.date
+cur.execute('CREATE TABLE day(Name TEXT, Package_Size TEXT, Price_Per TEXT, Price TEXT)')
 
 #add to table
 for container in containers:
