@@ -75,7 +75,7 @@ conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 #create new table
 cur = conn.cursor()
-c.execute('CREATE TABLE posts(Name TEXT, Package Size TEXT, Price Per TEXT, Price TEXT)')
+cur.execute('CREATE TABLE posts(Name TEXT, Package Size TEXT, Price Per TEXT, Price TEXT)')
 
 #add to table
 for container in containers:
@@ -110,10 +110,10 @@ for container in containers:
 	elif "Original" in price:
 		price = price.strip().strip("Original Price")
 
-	c.execute('INSERT INTO posts VALUES(item_name, package_size, price_per, price)')
+	cur.execute('INSERT INTO posts VALUES(item_name, package_size, price_per, price)')
 
 #close database
 conn.commit()
-curr.close()
+cur.close()
 conn.close()
 print("worked")
