@@ -1,5 +1,10 @@
 # test-scrape-bot
 
+Pre-reqs:
+1. HCL installed
+2. Postgres set up locally
+3. pip install selenium, beautifulsoup4, psycopg2
+
 To use:
 1. Clone repo
 2. Use a terminal and navigate into the repo
