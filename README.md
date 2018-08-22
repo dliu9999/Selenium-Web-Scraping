@@ -1,7 +1,7 @@
 # test-scrape-bot
 
-Pre-reqs:
-1. HCL installed
+Requirements:
+1. HCI installed
 2. Postgres set up locally
 3. pip install selenium, beautifulsoup4, psycopg2
 
