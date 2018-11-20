@@ -1,4 +1,4 @@
-# test-scrape-bot
+# selenium-web-mining
 
 Requirements:
 1. HCI installed
