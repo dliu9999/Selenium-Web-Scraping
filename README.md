@@ -1,4 +1,4 @@
-# selenium-web-mining
+# selenium-web-scraping
 
 Requirements:
 1. HCI installed
